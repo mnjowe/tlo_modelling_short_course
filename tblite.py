@@ -79,7 +79,7 @@ class TbLite(Module):
 
 
 class TblInfectionEvent(RegularEvent, PopulationScopeEventMixin):
-    """ cause individuals to be infected by Tb. This event will run every one month """
+    """ cause individuals to be infected by Tb. This event will run every month """
 
     def __init__(self, module: Module) -> None:
         self.repeat = 1
@@ -106,7 +106,7 @@ class TblInfectionEvent(RegularEvent, PopulationScopeEventMixin):
 
 
 class TblCureEvent(RegularEvent, PopulationScopeEventMixin):
-    """ cause individuals to recover from Tb. This event will run every one month """
+    """ cause individuals to recover from Tb. This event will run every month """
 
     def __init__(self, module: Module) -> None:
         self.repeat = 1
