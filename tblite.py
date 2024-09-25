@@ -75,11 +75,13 @@ class TbLite(Module):
                                        data={'incidence': self.incidence_tb.values(),
                                              'prevalence': self.prevalence_tb.values(),
                                              'total_pop': len(self.sim.population.props)})
-        print(f'the tb inc and prev is {tb_inc_and_prev}')
+
+        print(f'\n\nrunning the model with infection probability at {self.parameters["p_infection"]}')
+        print(tb_inc_and_prev)
 
 
 class TblInfectionEvent(RegularEvent, PopulationScopeEventMixin):
-    """ cause individuals to be infected by Tb. This event will run every month """
+    """ cause individuals to be infected by Tb. This event will run every one month """
 
     def __init__(self, module: Module) -> None:
         self.repeat = 1
@@ -106,7 +108,7 @@ class TblInfectionEvent(RegularEvent, PopulationScopeEventMixin):
 
 
 class TblCureEvent(RegularEvent, PopulationScopeEventMixin):
-    """ cause individuals to recover from Tb. This event will run every month """
+    """ cause individuals to recover from Tb. This event will run every one month """
 
     def __init__(self, module: Module) -> None:
         self.repeat = 1
